@@ -14,9 +14,9 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text Label 8025 1075 0    60   ~ 0
-1(Tx)
+Tx
 Text Label 8025 1175 0    60   ~ 0
-0(Rx)
+Rx
 Text Label 8025 1275 0    60   ~ 0
 Reset
 Text Label 8025 1475 0    60   ~ 0
@@ -567,13 +567,13 @@ Text GLabel 6550 4375 0    50   Input ~ 0
 D6
 Wire Wire Line
 	6850 4375 6550 4375
-Text GLabel 6550 4475 0    50   Input ~ 0
+Text GLabel 6550 4475 0    50   Output ~ 0
 A1
 Wire Wire Line
 	6550 4475 6850 4475
 Text GLabel 6550 4175 0    50   Input ~ 0
 D2
-Text GLabel 6550 4275 0    50   Input ~ 0
+Text GLabel 6550 4275 0    50   BiDi ~ 0
 D4
 Wire Wire Line
 	6550 4175 6850 4175
@@ -583,7 +583,7 @@ Text GLabel 6550 4675 0    50   Input ~ 0
 D3
 Wire Wire Line
 	6550 4675 6850 4675
-Text GLabel 6550 4575 0    50   Input ~ 0
+Text GLabel 6550 4575 0    50   BiDi ~ 0
 D5
 Wire Wire Line
 	6550 4575 6850 4575
@@ -681,12 +681,12 @@ NoConn ~ 4100 4075
 $Comp
 L power:+12V #PWR0116
 U 1 1 607384B9
-P 5800 1275
-F 0 "#PWR0116" H 5800 1125 50  0001 C CNN
-F 1 "+12V" H 5815 1448 50  0000 C CNN
-F 2 "" H 5800 1275 50  0001 C CNN
-F 3 "" H 5800 1275 50  0001 C CNN
-	1    5800 1275
+P 5550 975
+F 0 "#PWR0116" H 5550 825 50  0001 C CNN
+F 1 "+12V" H 5565 1148 50  0000 C CNN
+F 2 "" H 5550 975 50  0001 C CNN
+F 3 "" H 5550 975 50  0001 C CNN
+	1    5550 975 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -720,8 +720,6 @@ Wire Wire Line
 	5800 2275 5900 2275
 Wire Wire Line
 	5800 1625 5900 1625
-Wire Wire Line
-	5800 1275 5900 1275
 $Comp
 L Connector_Generic:Conn_01x01 J2
 U 1 1 6075AFF2
@@ -800,4 +798,140 @@ Wire Wire Line
 	5800 2550 5900 2550
 Wire Wire Line
 	5800 2800 5900 2800
+$Comp
+L Mechanical:MountingHole H6
+U 1 1 6076CA7C
+P 2475 1575
+F 0 "H6" H 2575 1621 50  0000 L CNN
+F 1 "MountingHole" H 2575 1530 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2475 1575 50  0001 C CNN
+F 3 "~" H 2475 1575 50  0001 C CNN
+	1    2475 1575
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H7
+U 1 1 6076DA94
+P 3275 1550
+F 0 "H7" H 3375 1596 50  0000 L CNN
+F 1 "MountingHole" H 3375 1505 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 3275 1550 50  0001 C CNN
+F 3 "~" H 3275 1550 50  0001 C CNN
+	1    3275 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H8
+U 1 1 6076DD76
+P 2475 1825
+F 0 "H8" H 2575 1871 50  0000 L CNN
+F 1 "MountingHole" H 2575 1780 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 2475 1825 50  0001 C CNN
+F 3 "~" H 2475 1825 50  0001 C CNN
+	1    2475 1825
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H9
+U 1 1 6076E12C
+P 3275 1800
+F 0 "H9" H 3375 1846 50  0000 L CNN
+F 1 "MountingHole" H 3375 1755 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 3275 1800 50  0001 C CNN
+F 3 "~" H 3275 1800 50  0001 C CNN
+	1    3275 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:PMEG3020EH D1
+U 1 1 6079E0C1
+P 5225 1275
+F 0 "D1" H 5225 1491 50  0000 C CNN
+F 1 "PMEG3020EH" H 5225 1400 50  0000 C CNN
+F 2 "Diodes_SMD:D_SOD-123F" H 5225 1100 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PMEG3020EH_EJ.pdf" H 5225 1275 50  0001 C CNN
+	1    5225 1275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5075 1275 4575 1275
+Text Label 4575 1275 0    50   ~ 0
+Vin
+NoConn ~ 6850 4875
+$Comp
+L Device:Fuse F1
+U 1 1 6080C892
+P 5700 1275
+F 0 "F1" V 5503 1275 50  0000 C CNN
+F 1 "15A" V 5594 1275 50  0000 C CNN
+F 2 "CustomComponents:atm_fuse_holder-mpd-bk-6013" V 5630 1275 50  0001 C CNN
+F 3 "~" H 5700 1275 50  0001 C CNN
+	1    5700 1275
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5375 1275 5550 1275
+Wire Wire Line
+	5550 1275 5550 975 
+Connection ~ 5550 1275
+Wire Wire Line
+	5850 1275 5900 1275
+Text Notes 2725 1375 0    50   ~ 10
+Mounting Holes
+Text Notes 3100 3050 0    50   ~ 10
+CAN Bus
+Text Notes 7575 3650 0    50   ~ 10
+Motor Controller
+Text Notes 5750 950  0    50   ~ 10
+Faston Connectors
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 60871480
+P 2675 6050
+F 0 "J1" H 2755 6042 50  0000 L CNN
+F 1 "Right Rudder Stop" H 2755 5951 50  0000 L CNN
+F 2 "Connectors_JST:JST_XH_B02B-XH-A_02x2.50mm_Straight" H 2675 6050 50  0001 C CNN
+F 3 "~" H 2675 6050 50  0001 C CNN
+	1    2675 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J8
+U 1 1 6087706D
+P 2675 6425
+F 0 "J8" H 2755 6417 50  0000 L CNN
+F 1 "Left Rudder Stop" H 2755 6326 50  0000 L CNN
+F 2 "Connectors_JST:JST_XH_B02B-XH-A_02x2.50mm_Straight" H 2675 6425 50  0001 C CNN
+F 3 "~" H 2675 6425 50  0001 C CNN
+	1    2675 6425
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6087F73E
+P 2125 6525
+F 0 "#PWR?" H 2125 6275 50  0001 C CNN
+F 1 "GND" H 2130 6352 50  0000 C CNN
+F 2 "" H 2125 6525 50  0001 C CNN
+F 3 "" H 2125 6525 50  0001 C CNN
+	1    2125 6525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2475 6525 2125 6525
+Wire Wire Line
+	2475 6150 2125 6150
+Wire Wire Line
+	2125 6150 2125 6525
+Connection ~ 2125 6525
+Text GLabel 2375 6050 0    50   Input ~ 0
+D7
+Text GLabel 2375 6425 0    50   Input ~ 0
+D8
+Wire Wire Line
+	2375 6050 2475 6050
+Wire Wire Line
+	2375 6425 2475 6425
+Text Notes 2400 5875 0    50   ~ 10
+Rudder Stop Switches
 $EndSCHEMATC
