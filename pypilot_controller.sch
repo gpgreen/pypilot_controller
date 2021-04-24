@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "PyPilot Controller"
 Date "2021 April 10"
-Rev "A"
+Rev "B"
 Comp "bit-builder.com"
 Comment1 ""
 Comment2 ""
@@ -290,17 +290,6 @@ F 3 "http://ww1.microchip.com/downloads/en/devicedoc/21667d.pdf" H 4600 3975 50 
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Crystal Y1
-U 1 1 60730883
-P 1075 4400
-F 0 "Y1" H 1075 4668 50  0000 C CNN
-F 1 "16MHz" H 1075 4577 50  0000 C CNN
-F 2 "Crystals:Crystal_SMD_TXC_7M-4pin_3.2x2.5mm" H 1075 4400 50  0001 C CNN
-F 3 "~" H 1075 4400 50  0001 C CNN
-	1    1075 4400
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+12V #PWR0102
 U 1 1 6073212C
 P 9200 4725
@@ -389,10 +378,6 @@ F 3 "~" H 1325 4775 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1600 4200 925  4200
-Wire Wire Line
-	925  4200 925  4400
-Wire Wire Line
 	1600 4300 1225 4300
 Wire Wire Line
 	1225 4300 1225 4400
@@ -400,12 +385,10 @@ Wire Wire Line
 	925  4400 800  4400
 Wire Wire Line
 	800  4400 800  4625
-Connection ~ 925  4400
 Wire Wire Line
 	1225 4400 1325 4400
 Wire Wire Line
 	1325 4400 1325 4625
-Connection ~ 1225 4400
 Wire Wire Line
 	2200 4800 2200 4875
 Wire Wire Line
@@ -934,4 +917,40 @@ Wire Wire Line
 	2375 6425 2475 6425
 Text Notes 2400 5875 0    50   ~ 10
 Rudder Stop Switches
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 6083F2DE
+P 1075 4400
+F 0 "Y1" H 1269 4446 50  0000 L CNN
+F 1 "16MHz" H 1269 4355 50  0000 L CNN
+F 2 "Crystals:Crystal_SMD_TXC_7M-4pin_3.2x2.5mm" H 1075 4400 50  0001 C CNN
+F 3 "~" H 1075 4400 50  0001 C CNN
+	1    1075 4400
+	1    0    0    -1  
+$EndComp
+Connection ~ 1225 4400
+Wire Wire Line
+	800  4400 800  4075
+Wire Wire Line
+	800  4075 1350 4075
+Wire Wire Line
+	1350 4075 1350 4200
+Wire Wire Line
+	1350 4200 1600 4200
+Connection ~ 800  4400
+$Comp
+L power:GND #PWR?
+U 1 1 6084D80E
+P 650 4200
+F 0 "#PWR?" H 650 3950 50  0001 C CNN
+F 1 "GND" H 655 4027 50  0000 C CNN
+F 2 "" H 650 4200 50  0001 C CNN
+F 3 "" H 650 4200 50  0001 C CNN
+	1    650  4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1075 4600 1075 5025
+Wire Wire Line
+	1075 4200 650  4200
 $EndSCHEMATC
